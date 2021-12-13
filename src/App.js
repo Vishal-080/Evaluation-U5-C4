@@ -1,9 +1,10 @@
 import "./styles.css";
+import Register from "./Components/RegisterForm";
 
 export default function App() {
   return (
     <div className="App">
-      <h1>Part-1</h1>
+      <Register />
     </div>
   );
 }
