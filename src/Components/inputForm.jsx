@@ -9,6 +9,7 @@ import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
+import { useNotification } from "./useNotification";
 
 const theme = createTheme();
 
@@ -17,10 +18,17 @@ export default function SignUp() {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
     // eslint-disable-next-line no-console
+
     console.log({
       email: data.get("email"),
       password: data.get("password")
     });
+  };
+
+  const success = useNotification();
+
+  const handleAlert = () => {
+    alert("Do you want to submit ?");
   };
 
   return (
@@ -104,6 +112,7 @@ export default function SignUp() {
               type="submit"
               fullWidth
               variant="contained"
+              onClick={handleAlert}
               sx={{ mt: 3, mb: 2, bgcolor: "orange" }}
             >
               Register
